@@ -6,7 +6,7 @@
 /*   By: lhutt <lhutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 23:00:58 by lhutt             #+#    #+#             */
-/*   Updated: 2022/11/05 18:33:35 by lhutt            ###   ########.fr       */
+/*   Updated: 2022/11/05 19:42:48 by lhutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ static char	*ft_split_word(char *str, char charset)
 static void	list_free(char **strs, int i)
 {
 	while (--i >= 0)
-		free(strs[i]);
+		free(strs[i]);-
 }
 
 char	**ft_split(char const *s, char c)

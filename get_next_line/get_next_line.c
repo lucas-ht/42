@@ -5,46 +5,86 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lhutt <lhutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/04 21:27:19 by lhutt             #+#    #+#             */
-/*   Updated: 2022/11/04 22:14:34 by lhutt            ###   ########.fr       */
+/*   Created: 2022/11/05 20:36:18 by lhutt             #+#    #+#             */
+/*   Updated: 2022/11/07 02:44:44 by lhutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-char    *read_next_line(int fd, char *left_str)
-{
-    char    *buffer;
-    int     bytes;
-
-    buffer = malloc((BUFFER_SIZE + 1) * sizeof(char));
-    if (!buffer)
-        return (0);
-    bytes = 42;
-    while (!ft_strchr(left_str, '\n') && bytes != 0)
-	{
-		bytes = read(fd, buffer, BUFFER_SIZE);
-		if (bytes == -1)
-		{
-			free(buffer);
-			return (0);
-		}
-		buffer[bytes] = 0;
-		left_str = ft_strjoin(left_str, buffer);
-	}
-}
-
 char	*get_next_line(int fd)
 {
-    char		*line;
-	static char	*left_str;
+	char		*buffer;
+	char		*cur_line;
+	static char	*next = NULL;
+	int			b;
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (0);
-	left_str = ft_read_to_left_str(fd, left_str);
-	if (!left_str)
+	buffer = malloc((BUFFER_SIZE + 1) * sizeof(char));
+	if (!buffer)
+		return (0);
+	b = 1;
+	while (!ft_strchr(next, '\n') && b)
+	{
+		b = read(fd, buffer, BUFFER_SIZE);
+		if (b <= 0)
+			break ;
+		buffer[b] = 0;
+		next = ft_strjoin(next, buffer);
+	}
+	free(buffer);
+
+	cur_line = get_cur_line(next);
+	next = get_to_next(next);
+	return (cur_line);
+}
+
+
+char	*get_cur_line(char *str)
+{
+	char	*result;
+	int		i;
+
+	if (str == NULL)
 		return (NULL);
-	line = ft_get_line(left_str);
-	left_str = ft_new_left_str(left_str);
-	return (line);
+	result = malloc(sizeof(char) * ft_strlen(str) + 1);
+	if (result == NULL)
+		return (NULL);
+	i = 0;
+	while (str[i])
+	{
+		result[i] = str[i];
+		i++;
+		if (str[i - 1] == '\n')
+			break ;
+	}
+	result[i] = '\0';
+	return (result);
+}
+
+char	*get_to_next(char	*str)
+{
+	char	*result;
+	int		i;
+	int		j;
+
+	if (str == NULL)
+		return (NULL);
+	i = 0;
+	while (str[i] && str[i] != '\n')
+		i++;
+	if (!str[i] || !str[i + 1])
+		return (free(str), NULL);
+	if (str[i])
+		i++;
+	result = malloc(sizeof(char) * ft_strlen(str + i) + 1);
+	if (result == NULL)
+		return (free(str), NULL);
+	j = 0;
+	while (str[i])
+		result[j++] = str[i++];
+	result[j] = '\0';
+	free(str);
+	return (result);
 }
