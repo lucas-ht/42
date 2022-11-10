@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lhutt <lhutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/05 20:36:56 by lhutt             #+#    #+#             */
-/*   Updated: 2022/11/10 02:57:12 by lhutt            ###   ########.fr       */
+/*   Created: 2022/11/10 02:51:16 by lhutt             #+#    #+#             */
+/*   Updated: 2022/11/10 02:55:28 by lhutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 char	*ft_read_line(int fd, char *str)
 {
@@ -39,14 +39,14 @@ char	*ft_read_line(int fd, char *str)
 char	*get_next_line(int fd)
 {
 	char		*line;
-	static char	*str;
+	static char	*str[MAX_FILE_DESCRIPTOR];
 
 	if (fd < 0 || fd >= MAX_FILE_DESCRIPTOR || BUFFER_SIZE <= 0)
 		return (0);
-	str = ft_read_line(fd, str);
-	if (!str)
+	str[fd] = ft_read_line(fd, str[fd]);
+	if (!str[fd])
 		return (0);
-	line = ft_copy_str(str);
-	str = ft_next_line(str);
+	line = ft_copy_str(str[fd]);
+	str[fd] = ft_next_line(str[fd]);
 	return (line);
 }
