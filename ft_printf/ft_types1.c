@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_types1.c                                        :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: lhutt <lhutt@student.42.fr>                +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/10 23:07:55 by lhutt             #+#    #+#             */
-/*   Updated: 2022/11/12 03:22:52 by lhutt            ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "ft_printf.h"
 
 int	ft_print_arg_char(char c)
@@ -26,15 +14,10 @@ int	ft_print_arg_string(char *s)
 
 int	ft_print_arg_int(int n)
 {
-	return (ft_putlong_fd(n, DEFAULT_FILE_DESCRIPTOR));
+	return (ft_putlong_fd((long) n, DEFAULT_FILE_DESCRIPTOR));
 }
 
 int	ft_print_arg_unsigned_int(unsigned int n)
 {
 	return (ft_putlong_fd(n, DEFAULT_FILE_DESCRIPTOR));
 }
-
-// int	ft_print_arg_float(float n)
-// {
-// 	return (0);
-// }

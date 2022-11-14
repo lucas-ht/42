@@ -1,17 +1,3 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: lhutt <lhutt@student.42.fr>                +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/11/10 04:45:46 by lhutt             #+#    #+#              #
-#    Updated: 2022/11/12 01:16:49 by lhutt            ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
-
-
-
 NAME		=	libftprintf.a
 
 
@@ -31,7 +17,7 @@ OBJS		=	${SRCS:.c=.o}
 	gcc -Wall -Wextra -Werror -c $< -o ${<:.c=.o} -I includes
 
 ${NAME}: ${OBJS}
-	$(MAKE) bonus -C ./libft
+	$(MAKE) -C ./libft
 	cp libft/libft.a $(NAME)
 	ar rc ${NAME} ${OBJS}
 	ranlib ${NAME}

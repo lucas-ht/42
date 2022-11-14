@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: lhutt <lhutt@student.42.fr>                +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/10 04:57:05 by lhutt             #+#    #+#             */
-/*   Updated: 2022/11/12 03:05:31 by lhutt            ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "ft_printf.h"
 
 int	ft_vformat(char c, va_list args)
@@ -53,10 +41,13 @@ int	ft_printf(const char *s, ...)
 	{
 		if (s[i] != '%' || !s[i + 1])
 		{
-			c += ft_putchar_fd(s[i++], DEFAULT_FILE_DESCRIPTOR);
+			if (!ft_write_protect(
+					ft_putchar_fd(s[i++], DEFAULT_FILE_DESCRIPTOR), &c))
+				return (WRITE_ERROR);
 			continue ;
 		}
-		c += ft_vformat(s[++i], args);
+		if (!ft_write_protect(ft_vformat(s[++i], args), &c))
+			return (WRITE_ERROR);
 		i++;
 	}
 	va_end(args);
