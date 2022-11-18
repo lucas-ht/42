@@ -6,7 +6,7 @@
 /*   By: lhutt <lhutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 02:55:55 by lhutt             #+#    #+#             */
-/*   Updated: 2022/11/03 23:22:17 by lhutt            ###   ########.fr       */
+/*   Updated: 2022/11/18 03:10:16 by lhutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,12 @@
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	char	*d;
-	char	*s;
-
 	if (!dst && !src)
 		return (dst);
-	d = (char *) dst;
-	s = (char *) src;
 	if (src < dst)
-	{
-		s += len - 1;
-		d += len - 1;
 		while (len--)
-			*d-- = *s--;
-	}
+			*(char *)(dst + len) = *(char *)(src + len);
 	else if (src >= dst)
-	{
-		while (len--)
-			*d++ = *s++;
-	}
+		ft_memcpy(dst, src, len);
 	return (dst);
 }

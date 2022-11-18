@@ -6,7 +6,7 @@
 /*   By: lhutt <lhutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 03:49:24 by lhutt             #+#    #+#             */
-/*   Updated: 2022/11/04 00:14:17 by lhutt            ###   ########.fr       */
+/*   Updated: 2022/11/18 03:31:21 by lhutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,8 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	unsigned char	*str;
-
-	str = (unsigned char *) s;
-	while (*str != (unsigned char) c)
-	{
-		if (!*str++)
+	while (*s != (unsigned char) c)
+		if (!*s++)
 			return (0);
-	}
-	return ((char *) str);
+	return ((char *) s);
 }

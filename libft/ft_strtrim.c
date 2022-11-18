@@ -6,7 +6,7 @@
 /*   By: lhutt <lhutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 21:50:13 by lhutt             #+#    #+#             */
-/*   Updated: 2022/11/04 02:04:34 by lhutt            ###   ########.fr       */
+/*   Updated: 2022/11/18 08:05:35 by lhutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,10 +37,9 @@ char	*ft_strtrim(char const *s1, char const *set)
 	end = (char *) s1 + (ft_strlen(s1) - 1) * sizeof(char);
 	while (end != start && ft_char_in_set(*end, set))
 		end--;
+	len = end - start + 2;
 	if (end == start)
 		len = 2;
-	else
-		len = end - start + 2;
 	str = malloc(len * sizeof(char));
 	if (!str)
 		return (0);

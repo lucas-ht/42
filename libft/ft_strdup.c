@@ -6,7 +6,7 @@
 /*   By: lhutt <lhutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 21:07:13 by lhutt             #+#    #+#             */
-/*   Updated: 2022/11/05 18:20:24 by lhutt            ###   ########.fr       */
+/*   Updated: 2022/11/18 03:54:19 by lhutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,17 @@
 
 char	*ft_strdup(const char *s1)
 {
-	char	*s2;
+	char	*str;
 	int		i;
 
 	if (!s1)
 		return (0);
-	s2 = (char *) malloc((ft_strlen(s1) + 1) * sizeof(char));
-	if (!s2)
+	str = (char *) malloc((ft_strlen(s1) + 1) * sizeof(char));
+	if (!str)
 		return (0);
 	i = -1;
 	while (s1[++i])
-		s2[i] = s1[i];
-	s2[i] = 0;
-	return (s2);
+		str[i] = s1[i];
+	str[i] = 0;
+	return (str);
 }

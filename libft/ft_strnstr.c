@@ -6,7 +6,7 @@
 /*   By: lhutt <lhutt@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 04:20:54 by lhutt             #+#    #+#             */
-/*   Updated: 2022/11/04 00:59:48 by lhutt            ###   ########.fr       */
+/*   Updated: 2022/11/18 03:48:35 by lhutt            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,8 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	{
 		j = 0;
 		while (needle[j] == haystack[i + j] && i + j < len)
-		{
-			if (!needle[j++ + 1])
+			if (!needle[++j])
 				return ((char *) haystack + i);
-		}
 		i++;
 	}
 	return (0);
