@@ -1,4 +1,4 @@
-#include "libft.h"
+#include "../libft.h"
 
 static int	ft_putlong_base_counter_fd(long long n, char *base, int c, int fd)
 {

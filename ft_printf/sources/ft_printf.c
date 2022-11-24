@@ -1,4 +1,5 @@
-#include "ft_printf.h"
+#include "../includes/ft_printf.h"
+#include "../libft/libft.h"
 
 int	ft_vformat(char c, va_list args)
 {
@@ -32,8 +33,6 @@ int	ft_printf(const char *s, ...)
 	int		i;
 	int		c;
 
-	if (!s)
-		return (0);
 	va_start(args, s);
 	i = 0;
 	c = 0;

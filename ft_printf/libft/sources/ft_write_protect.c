@@ -1,4 +1,4 @@
-#include "libft.h"
+#include "../libft.h"
 
 int	ft_write_protect(int ft_put_result, int *c)
 {

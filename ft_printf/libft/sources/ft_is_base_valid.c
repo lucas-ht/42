@@ -1,4 +1,4 @@
-#include "libft.h"
+#include "../libft.h"
 
 int	ft_is_base_valid(char *base)
 {

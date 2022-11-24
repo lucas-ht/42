@@ -1,4 +1,5 @@
-#include "ft_printf.h"
+#include "../includes/ft_printf.h"
+#include "../libft/libft.h"
 
 int	ft_print_arg_char(char c)
 {
