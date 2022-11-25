@@ -1,3 +1,7 @@
+# 42
+
+[`libft_updated`](/libft_updated) : The current version of my libft !
+
 ### Ring 00  
 * [`libft`](/libft) <img height="25" align="right" src="https://img.shields.io/badge/Moulinette-125%25-success"/>
 
