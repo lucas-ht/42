@@ -11,3 +11,4 @@
 * [`Born2beRoot`](/Born2beRoot) <img height="25" align="right" src="https://img.shields.io/badge/110%25-success"/>
 
 ### Ring 02
+* [`minitalk`](/minitalk) <img height="25" align="right" src="https://img.shields.io/badge/125%25-success"/>
