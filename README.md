@@ -13,3 +13,4 @@
 ### Ring 02
 * [`minitalk`](/minitalk) <img height="25" align="right" src="https://img.shields.io/badge/125%25-success"/>
 * [`push_swap`](/push_swap) <img height="25" align="right" src="https://img.shields.io/badge/111%25-success"/>
+* [`fdf`](/fdf) <img height="25" align="right" src="https://img.shields.io/badge/125%25-success"/>
