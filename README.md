@@ -14,3 +14,6 @@
 * [`minitalk`](/minitalk) <img height="25" align="right" src="https://img.shields.io/badge/125%25-success"/>
 * [`push_swap`](/push_swap) <img height="25" align="right" src="https://img.shields.io/badge/111%25-success"/>
 * [`fdf`](/fdf) <img height="25" align="right" src="https://img.shields.io/badge/125%25-success"/>
+
+### Ring 03
+* [`philosophers`](/philosophers) <img height="25" align="right" src="https://img.shields.io/badge/100%25-success"/>
