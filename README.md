@@ -1,6 +1,6 @@
 # 42
 
-[`libft_updated`](../libft_updated) : The current version of my libft !
+[`libft_updated`](../../tree/libft_updated) : The current version of my libft !
 
 ### Ring 00  
 * [`libft`](../libft) <img height="25" align="right" src="https://img.shields.io/badge/Moulinette-125%25-success"/>
@@ -17,6 +17,6 @@
 
 ### Ring 03
 * [`philosophers`](../philosophers) <img height="25" align="right" src="https://img.shields.io/badge/100%25-success"/>
-* [`minishell`](../minishell) <img height="25" align="right" src="https://img.shields.io/badge/101%25-success"/>
+* [`minishell`](../../tree/minishell) <img height="25" align="right" src="https://img.shields.io/badge/101%25-success"/>
 
 ### Ring 04
