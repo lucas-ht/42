@@ -12,7 +12,7 @@
 
 ### Ring 02
 * [`minitalk`](../../tree/minitalk) <img height="25" align="right" src="https://img.shields.io/badge/125%25-success"/>
-* [`push_swap`](../../tree/push_swap) <img height="25" align="right" src="https://img.shields.io/badge/111%25-success"/>
+* [`push_swap`](../../tree/push_swap) <img height="25" align="right" src="https://img.shields.io/badge/125%25-success"/>
 * [`fdf`](../../tree/fdf) <img height="25" align="right" src="https://img.shields.io/badge/125%25-success"/>
 
 ### Ring 03
