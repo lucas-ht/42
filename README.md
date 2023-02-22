@@ -8,7 +8,7 @@ git clone https://github.com/lucas-ht/42.git -b CPP CPP
 ---
 ### CPP Module:
 
-* [`Module 00`](../../tree/CPP/Module-00) <a href=""><img height="25" align="right" src="https://img.shields.io/badge/100%25-success"/><a/>
+* [`Module 00`](../../tree/CPP/Module-00) <a href="#"><img height="25" align="right" src="https://img.shields.io/badge/100%25-success"/><a/>
 
 * [`Module 01`](../../tree/CPP/Module-01) <a href="#"><img height="25" align="right" src="https://img.shields.io/badge/100%25-success"/><a/>
 
