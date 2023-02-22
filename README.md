@@ -1,8 +1,8 @@
 # 42 - CPP
 
 ### How to clone:
-``` sh
-git clone git@github.com:lucas-ht/42.git -b CPP CPP
+``` bash
+git clone https://github.com/lucas-ht/42.git -b CPP CPP
 ```
 
 ---
