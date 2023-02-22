@@ -3,7 +3,7 @@
 [`libft_updated`](../../tree/libft_updated) : The current version of my libft !
 
 ### Ring 00  
-* [`libft`](../../tree/libft) <a href="#"><img height="25" align="right" src="https://img.shields.io/badge/Moulinette-125%25-success"/><a/>
+* [`libft`](../../tree/libft) <picture><img height="25" align="right" src="https://img.shields.io/badge/Moulinette-125%25-success"/></picture>
 
 ### Ring 01
 * [`get_next_line`](../../tree/get_next_line) <a href="#"><img height="25" align="right" src="https://img.shields.io/badge/Moulinette-125%25-success"/><a/>
