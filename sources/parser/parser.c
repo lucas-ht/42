@@ -87,7 +87,7 @@ t_stacks	*ft_parse(int ac, char **av)
 	int			i;
 
 	if (ac == 1)
-		ft_error(ERROR_ARGV);
+		exit(0);
 	av = ft_parse_convert(ac, (char **) av);
 	if (!av)
 		ft_error(ERROR_PARSE);

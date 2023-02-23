@@ -6,7 +6,7 @@
 /*   By: lucas <lucas@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 07:28:05 by lucas             #+#    #+#             */
-/*   Updated: 2023/02/12 14:04:41 by lucas            ###   ########.fr       */
+/*   Updated: 2023/02/23 07:57:28 by lucas            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ static void	ft_read(t_stacks *stacks)
 	char		*line;
 	char		*trim;
 
+	trim = 0;
 	line = get_next_line(STDIN_FILENO);
 	while (line)
 	{
