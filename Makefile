@@ -5,14 +5,13 @@
 NAME			:=	push_swap
 
 LIBFT			:=	./libft/
-READLINE		:=	$(shell brew --prefix readline)
 
 CC 				:=	gcc
 CFLAGS			:=	-Wall -Wextra -Werror
 CDEBUG_FLAGS	:=	-Wall -g
-CFLAGS_EXEC		:=	-L $(LIBFT) -lft -lreadline -L $(READLINE)/lib
+CFLAGS_EXEC		:=	-L $(LIBFT) -lft -lreadline
 
-CINCLUDES		:=	./includes/ $(LIBFT)/includes/ $(READLINE)/include/
+CINCLUDES		:=	./includes/ $(LIBFT)/includes/
 
 CLIBRARY		:=	0	# 0 | 1 : Compiles to a static library
 CBONUS			:=	1	# 0 | 1 : Compiles only the bonus files
