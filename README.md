@@ -1,5 +1,9 @@
 # 42
 
+<picture><img src="https://badge42.vercel.app/api/v2/clf048y1p00110fmbm8csxx03/stats?cursusId=21&coalitionId=undefined"/></picture>
+
+---
+
 [`libft_updated`](../../tree/libft_updated) : The current version of my libft !
 
 ### Ring 00  
