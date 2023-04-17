@@ -25,3 +25,8 @@
 
 ### Ring 04
 * [`CPP`](../../tree/CPP)
+* `NetPractice` <picture><img height="25" align="right" src="https://img.shields.io/badge/100%25-success"/></picture>
+* [`cub3d`](../../tree/cub3d) <picture><img height="25" align="right" src="https://img.shields.io/badge/125%25-success"/></picture>
+
+### Ring 05
+* [`CPP`](../../tree/CPP)
