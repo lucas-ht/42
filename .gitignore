@@ -1,0 +1,23 @@
+# DSStore
+.DS_Store
+
+# Object files
+*.o
+
+# Libraries
+*.a
+
+# Executables
+*.out
+
+# Debug files
+*.dSYM/
+
+# VS Code
+.vscode/
+
+# test
+test/
+
+# build
+build/

@@ -1,0 +1,25 @@
+NO ./textures/debug/north.png
+
+C 165, 201, 202
+
+SO ./textures/debug/south.png
+
+
+WE ./textures/debug/west.png
+
+F 165, 201, 202
+
+EA ./textures/debug/east.png
+
+DO ./textures/debug/door.png
+
+
+1111111111111
+1000000000001
+1000011100001
+1000001000001
+1000000000001
+1121100000001
+1000100000001
+10N0100000001
+1111111111111
