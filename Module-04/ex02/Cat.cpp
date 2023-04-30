@@ -20,6 +20,7 @@ Cat& Cat::operator=(const Cat& c) {
     if (this == &c)
         return *this;
     this->type = c.type;
+    delete this->brain;
     this->brain = new Brain(*c.brain);
     return *this;
 }

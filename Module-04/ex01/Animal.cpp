@@ -4,7 +4,8 @@ Animal::Animal() : type("Animal") {
     std::cout << this->type << " constructor called" << std::endl;
 }
 
-Animal::Animal(const Animal& a) : type(a.getType()) {
+Animal::Animal(const Animal& a) {
+    *this = a;
     std::cout << this->type << " copy constructor called" << std::endl;
 }
 
@@ -13,6 +14,8 @@ Animal::~Animal() {
 }
 
 Animal& Animal::operator=(const Animal& a) {
+    if (this == &a)
+        return *this;
     this->type = a.getType();
     return *this;
 }

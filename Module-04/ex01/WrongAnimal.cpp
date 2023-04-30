@@ -4,7 +4,8 @@ WrongAnimal::WrongAnimal() : type("WrongAnimal") {
     std::cout << this->type << " constructor called" << std::endl;
 }
 
-WrongAnimal::WrongAnimal(const WrongAnimal& a) : type(a.getType()) {
+WrongAnimal::WrongAnimal(const WrongAnimal& a) {
+    *this = a;
     std::cout << this->type << " copy constructor called" << std::endl;
 }
 
@@ -13,6 +14,8 @@ WrongAnimal::~WrongAnimal() {
 }
 
 WrongAnimal& WrongAnimal::operator=(const WrongAnimal& a) {
+    if (this == &a)
+        return *this;
     this->type = a.getType();
     return *this;
 }

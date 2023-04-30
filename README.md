@@ -16,7 +16,7 @@ git clone https://github.com/lucas-ht/42.git -b CPP CPP
 
 * [`Module 03`](../../tree/CPP/Module-03) <picture><img height="25" align="right" src="https://img.shields.io/badge/100%25-success"/></picture>
 
-* [`Module 04`](../../tree/CPP/Module-04) <picture><img height="25" align="right" src="https://img.shields.io/badge/80%25-success"/></picture>
+* [`Module 04`](../../tree/CPP/Module-04) <picture><img height="25" align="right" src="https://img.shields.io/badge/100%25-success"/></picture>
 
 * [`Module 05`](../../tree/CPP/Module-05) <picture><img height="25" align="right" src="https://img.shields.io/badge/100%25-success"/></picture>
 

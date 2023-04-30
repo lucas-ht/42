@@ -20,6 +20,7 @@ Dog& Dog::operator=(const Dog& c) {
     if (this == &c)
         return *this;
     this->type = c.type;
+    delete this->brain;
     this->brain = new Brain(*c.brain);
     return *this;
 }

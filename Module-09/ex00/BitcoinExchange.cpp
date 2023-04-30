@@ -24,8 +24,9 @@ float BitcoinExchange::getPrice(int date) {
 
     std::map<int, float>::iterator it;
     it = this->price.upper_bound(date);
-    if (it != this->price.begin())
-        --it;
+    if (it == this->price.begin())
+        throw BitcoinExchange::InvalidDateException();
+    --it;
     return it->second;
 }
 

@@ -7,6 +7,17 @@
 int main()
 {
 
+    Cat *cat = new Cat();
+    std::cout << std::endl;
+    Cat *cat2 = new Cat(*cat);
+    std::cout << std::endl;
+    *cat2 = *cat;
+    std::cout << std::endl;
+    delete cat;
+    std::cout << std::endl;
+    delete cat2;
+    std::cout << std::endl;
+
     Animal  *animals[10];
     for (int i = 0; i < 10; i++) {
         if (i % 2)  { animals[i] = new Cat(); }
