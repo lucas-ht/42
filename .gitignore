@@ -1,0 +1,6 @@
+# .DS_Store files
+.DS_Store
+
+# Environment variables (credentials, SSL certificates, etc.)
+# .env
+# ssl/

@@ -1,0 +1,137 @@
+version: '3.8'
+
+services:
+  nginx:
+    container_name: nginx
+    build:
+      context: .
+      dockerfile: ./requirements/nginx/Dockerfile
+      args:
+        SSL_CRT:            ${SSL_CRT}
+        SSL_KEY:            ${SSL_KEY}
+    ports:
+      - "443:443"
+    volumes_from:
+      - wordpress
+    depends_on:
+      wordpress:
+        condition: service_started
+      adminer:
+        condition: service_started
+    environment:
+      HOSTNAME:             ${HOSTNAME}
+    restart: always
+    networks:
+      - inception
+
+  wordpress:
+    container_name: wordpress
+    build: ./requirements/wordpress/
+    volumes:
+      - wordpress:/var/www/html
+    depends_on:
+      mariadb:
+        condition: service_healthy
+      redis:
+        condition: service_started
+    environment:
+      HOSTNAME:             ${HOSTNAME}
+      MYSQL_DATABASE:       ${MYSQL_DATABASE}
+      MYSQL_USER:           ${MYSQL_USER}
+      MYSQL_PASSWORD:       ${MYSQL_PASSWORD}
+      MYSQL_ROOT_PASSWORD:  ${MYSQL_ROOT_PASSWORD}
+      WP_ROOT_USER:         ${WP_ROOT_USER}
+      WP_ROOT_PASSWORD:     ${WP_ROOT_PASSWORD}
+      WP_ROOT_MAIL:         ${WP_ROOT_MAIL}
+      WP_USER:              ${WP_USER}
+      WP_PASSWORD:          ${WP_PASSWORD}
+      WP_MAIL:              ${WP_MAIL}
+    restart: always
+    networks:
+      - inception
+
+  mariadb:
+    container_name: mariadb
+    build: ./requirements/mariadb/
+    volumes:
+      - "mariadb:/var/lib/mysql"
+    environment:
+      MYSQL_DATABASE:       ${MYSQL_DATABASE}
+      MYSQL_USER:           ${MYSQL_USER}
+      MYSQL_PASSWORD:       ${MYSQL_PASSWORD}
+      MYSQL_ROOT_PASSWORD:  ${MYSQL_ROOT_PASSWORD}
+    restart: always
+    healthcheck:
+      test: mariadb-admin ping --silent
+    networks:
+      - inception
+
+  redis:
+    container_name: redis
+    build: ./requirements/bonus/redis
+    restart: always
+    networks:
+      - inception
+
+  adminer:
+    container_name: adminer
+    build: ./requirements/bonus/adminer/
+    depends_on:
+      mariadb:
+        condition: service_healthy
+    restart: always
+    networks:
+      - inception
+
+  ftp:
+    container_name: ftp
+    build: ./requirements/bonus/ftp/
+    ports:
+      - "21:21"
+      - "21100-21110:21100-21110"
+    volumes_from:
+      - wordpress
+    environment:
+      FTP_USER:             ${FTP_USER}
+      FTP_PASSWORD:         ${FTP_PASSWORD}
+    restart: always
+
+  flask:
+    container_name: flask
+    build: ./requirements/bonus/flask/
+    ports:
+      - "8000:8000"
+    restart: always
+
+  portainer:
+    container_name: portainer
+    build: ./requirements/bonus/portainer/
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock"
+    ports:
+      - "9000:9000"
+    restart: always
+
+
+volumes:
+  wordpress:
+    name: wordpress
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: ${VOLUME}/wordpress
+
+  mariadb:
+    name: mariadb
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: ${VOLUME}/mariadb
+
+
+networks:
+  inception:
+    name: inception
+    driver: bridge
