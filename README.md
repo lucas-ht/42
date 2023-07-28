@@ -1,6 +1,8 @@
 # 42
 
+<p align="center">
 <picture><img src="https://badge42.vercel.app/api/v2/clf048y1p00110fmbm8csxx03/stats?cursusId=21&coalitionId=undefined"/></picture>
+</p>
 
 ---
 
