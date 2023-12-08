@@ -2,7 +2,7 @@
 
 ### How to clone:
 ``` bash
-git clone https://github.com/lucas-ht/42.git -b CPP CPP
+git clone https://github.com/lucas-ht/42.git -b CPP CPP --single-branch
 ```
 
 ---
