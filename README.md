@@ -2,5 +2,5 @@
 
 ### How to clone:
 ``` bash
-git clone https://github.com/lucas-ht/42.git -b inception inception
+git clone https://github.com/lucas-ht/42.git -b inception inception --single-branch
 ```
