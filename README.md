@@ -2,7 +2,7 @@
 
 ### How to clone:
 ``` bash
-git clone https://github.com/lucas-ht/42.git -b cub3d cub3d
+git clone https://github.com/lucas-ht/42.git -b cub3d cub3d --single-branch
 ```
 
 ### How to compile:
